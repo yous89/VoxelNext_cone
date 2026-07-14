@@ -101,6 +101,12 @@ python test.py \
 ```
 
 ---
+# Detection Results
+
+<p align="center">
+<img src="VoxelNeXt/output/kitti_models/voxelnext_cones/sr_training/ckpt/Screenshot 2026-07-08 134832.png" width="950">
+</p>
+---
 
 # Ouster PCAP Demo
 
