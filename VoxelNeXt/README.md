@@ -83,6 +83,34 @@ bash scripts/dist_train.sh NUM_GPUS --cfg_file PATH_TO_CONFIG_FILE
 bash scripts/dist_train.sh 8 --cfg_file PATH_TO_CONFIG_FILE
 ```
 
+
+## Ouster PCAP Demo
+
+The following command runs VoxelNeXt inference on an Ouster OS2-128 PCAP recording and exports a Bird's-Eye-View video with:
+
+- 3D cone detections
+- confidence scores
+- number of LiDAR points per detected object
+- model FPS
+- complete BEV visualization
+
+### Run the demo
+
+```shell
+cd tools
+
+python demo_ouster_voxelnext_bev.py \
+  --cfg_file cfgs/kitti_models/voxelnext_cones.yaml \
+  --ckpt /path/to/checkpoint_epoch_48.pth \
+  --pcap "/path/to/ouster_recording.pcap" \
+  --metadata "/path/to/ouster_metadata.json" \
+  --score_thresh 0.5 \
+  --x_min -18 \
+  --x_max 18 \
+  --y_min -18 \
+  --y_max 18 \
+  --output ../demo_video/voxelnext_bev_demo.mp4
+
 ## Citation 
 If you find this project useful in your research, please consider citing:
 
